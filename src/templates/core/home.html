@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="home">
+    <h1>Bienvenido a Tu Sistema de Control de Gastos</h1>
+    
+    {% if user.is_authenticated %}
+        <p>Hola, {{ user.username }}!</p>
+        <a href="{% url 'authentication:profile' %}">Ver mi perfil</a>
+        <a href="{% url 'authentication:logout' %}">Cerrar sesión</a>
+    {% else %}
+        <p>Por favor, inicia sesión o regístrate para comenzar.</p>
+        <a href="{% url 'authentication:login' %}">Iniciar sesión</a>
+        <a href="{% url 'authentication:signup' %}">Registrarse</a>
+    {% endif %}
+</div>
+{% endblock %}
