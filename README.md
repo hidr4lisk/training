@@ -1,2 +1,10 @@
 # training
-Una app en django para planificar mis menús de comida, la idea es levantarla y verla online desde el celu
+
+
+source /home/hidr4lisk/repos/tr/.venv/bin/activate
+
+
+python3 manage.py runserver
+
+ls -R /home/hidr4lisk/repos/tr
+
