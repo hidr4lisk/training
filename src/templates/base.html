@@ -25,7 +25,10 @@
                             <a class="nav-link" href="{% url 'authentication:profile' %}">Mi Perfil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'authentication:logout' %}">Cerrar Sesión</a>
+                            <form method="post" action="{% url 'authentication:logout' %}" class="nav-link" style="margin:0; padding:0;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-link nav-link" style="text-decoration: none;">Cerrar Sesión</button>
+                            </form>
                         </li>
                     {% else %}
                         <li class="nav-item">
