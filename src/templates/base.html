@@ -11,10 +11,10 @@
     <header>
         <nav>
             {% if user.is_authenticated %}
-                <a href="{% url 'login:logout' %}">Cerrar sesión</a>
+                <a href="{% url 'login:logout' %}"><button>Cerrar sesión</button></a>
             {% else %}
-                <a href="{% url 'login:login' %}">Iniciar sesión</a>
-                <a href="{% url 'registration:register' %}">Registrarse</a>
+                <a href="{% url 'login:login' %}"><button>Iniciar sesión</button></a>
+                <a href="{% url 'registration:register' %}"><button>Registrarse</button></a>
             {% endif %}
         </nav>
     </header>
