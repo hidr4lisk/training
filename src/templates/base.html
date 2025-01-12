@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}Mi Sistema{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
-    <header>
-        <nav>
-            {% if user.is_authenticated %}
-                <a href="{% url 'login:logout' %}"><button>Cerrar sesión</button></a>
-            {% else %}
-                <a href="{% url 'login:login' %}"><button>Iniciar sesión</button></a>
-                <a href="{% url 'registration:register' %}"><button>Registrarse</button></a>
-            {% endif %}
-        </nav>
-    </header>
-
-    <main>
+    <div class="navbar">
+        {% if user.is_authenticated %}
+            <a href="{% url 'login:logout' %}"><button>Cerrar sesión</button></a>
+        {% else %}
+            <a href="{% url 'login:login' %}"><button>Iniciar sesión</button></a>
+            <a href="{% url 'registration:register' %}"><button>Registrarse</button></a>
+        {% endif %}
+    </div>
+    <div class="cuerpo">
         {% if messages %}
             <div class="messages">
                 {% for message in messages %}
@@ -32,6 +29,6 @@
 
         {% block content %}
         {% endblock %}
-    </main>
+    </div>
 </body>
 </html>
